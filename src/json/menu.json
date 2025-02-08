@@ -1,0 +1,39 @@
+{
+  "menu": [
+    {
+      "path": "",
+      "name": "概览",
+      "link": "/",
+      "icon": "home",
+      "children": []
+    },
+    {
+      "path": "",
+      "name": "演示",
+      "link": "/about",
+      "icon": "info",
+      "children": []
+    },
+    {
+      "path": "",
+      "name": "示例",
+      "link": "/contact",
+      "icon": "envelope",
+      "children": []
+    },
+    {
+      "path": "",
+      "name": "项目",
+      "link": "/login",
+      "icon": "sign-in-alt",
+      "children": []
+    },
+    {
+      "path": "",
+      "name": "关于",
+      "link": "/login",
+      "icon": "sign-in-alt",
+      "children": []
+    }
+  ]
+}
