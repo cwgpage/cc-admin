@@ -1,38 +1,35 @@
 {
   "menu": [
     {
+      "id": 1,
       "path": "",
       "name": "概览",
       "link": "/",
-      "icon": "home",
+      "icon": "icon-changyongshili",
       "children": []
     },
     {
+      "id": 2,
       "path": "",
       "name": "演示",
       "link": "/about",
-      "icon": "info",
+      "icon": "icon-line-080",
       "children": []
     },
     {
+      "id": 3,
       "path": "",
       "name": "示例",
       "link": "/contact",
-      "icon": "envelope",
+      "icon": "icon-shili",
       "children": []
     },
     {
-      "path": "",
-      "name": "项目",
-      "link": "/login",
-      "icon": "sign-in-alt",
-      "children": []
-    },
-    {
+      "id": 4,
       "path": "",
       "name": "关于",
       "link": "/login",
-      "icon": "sign-in-alt",
+      "icon": "icon-guanyu1",
       "children": []
     }
   ]

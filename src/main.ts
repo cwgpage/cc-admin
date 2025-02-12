@@ -5,6 +5,7 @@ import '@/assets/style/main.css'
 
 import '@unocss/reset/tailwind-compat.css'
 import 'virtual:uno.css'
+import '@/assets/iconfont/iconfont.css'
 
 const app = createApp(App)
 

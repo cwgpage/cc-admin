@@ -3,9 +3,14 @@ import LeftMenu from '@/layouts/components/LeftMenu/index.vue'
 </script>
 
 <template>
-  <div>
+  <div class="default-layout">
     <LeftMenu />
+    <RouterView />
   </div>
 </template>
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+.default-layout {
+  @apply flex h-screen;
+}
+</style>
