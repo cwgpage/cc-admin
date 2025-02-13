@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import LeftMenu from '@/layouts/components/LeftMenu/index.vue'
+import LeftMenu from '@/layouts/components/Menu/index.vue'
 </script>
 
 <template>

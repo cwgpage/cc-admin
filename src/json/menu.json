@@ -1,12 +1,29 @@
 {
-  "menu": [
+  "data": [
     {
       "id": 1,
       "path": "",
       "name": "概览",
       "link": "/",
       "icon": "icon-changyongshili",
-      "children": []
+      "children": [
+        {
+          "id": 101,
+          "path": "",
+          "name": "分析页",
+          "link": "/",
+          "icon": "icon-changyongshili",
+          "children": []
+        },
+        {
+          "id": 102,
+          "path": "",
+          "name": "工作台",
+          "link": "/",
+          "icon": "icon-changyongshili",
+          "children": []
+        }
+      ]
     },
     {
       "id": 2,
