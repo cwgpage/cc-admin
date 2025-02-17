@@ -41,7 +41,7 @@ function subMenuClick(menu: any) {
       </div>
     </div>
     <div class="right-menu-wrapper">
-      <div class="h-46px center text-(18px)">CC Admin Antd</div>
+      <div class="right-title">CC Admin Antd</div>
       <a-menu
         v-model:selected-keys="selectMenuList"
         class="right-menu"
@@ -65,7 +65,8 @@ function subMenuClick(menu: any) {
     @apply h-49px center;
   }
   .left-menu-list {
-    @apply w-70px overflow-y-scroll h-[calc(100%-45px)] pt-10px;
+    @apply w-70px overflow-y-scroll h-[calc(100%-45px)] pt-10px relative;
+
     .left-menu-item {
       @apply transition-all mx-8px flex flex-col items-center mb-14px text-(14px #333) h-54px center gap-6px cursor-pointer;
 
@@ -88,9 +89,18 @@ function subMenuClick(menu: any) {
 }
 
 .right-menu-wrapper {
-  @apply h-full w-180px;
-  .right-menu {
-    @apply h-full;
+  @apply h-full w-160px flex flex-col;
+  .right-title {
+    @apply h-46px center text-(18px) border-r;
   }
+
+  .right-menu {
+    @apply flex-1;
+  }
+}
+
+// 隐藏滚动条
+.left-menu-list::-webkit-scrollbar {
+  @apply w-0;
 }
 </style>

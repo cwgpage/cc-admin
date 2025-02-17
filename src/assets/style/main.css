@@ -1,1 +1,11 @@
 @import "./base.css";
+
+/* 修改滚动条样式 */
+/* 修改html滚动条样式 */
+::-webkit-scrollbar {
+    @apply bg-transparent w-10px right-0;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-#999 rounded-8px;
+}
