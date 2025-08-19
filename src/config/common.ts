@@ -1,17 +1,11 @@
-// 首页地址（默认）
-export const HOME_URL: string = '/home/index'
+// 默认标题
+export const DEFAULT_TITLE: string = 'CC Admin'
 
-// 登录页地址（默认）
-export const LOGIN_URL: string = '/login'
-
-// 默认主题颜色
-export const DEFAULT_PRIMARY: string = '#009688'
+// 默认主题配置
+export const DEFAULT_THEME_CONFIG = {
+  // 默认主题色
+  primaryColor: '#009688',
+}
 
 // 路由白名单地址（本地存在的路由 staticRouter.ts 中）
-export const ROUTER_WHITE_LIST: string[] = ['/500']
-
-// 高德地图 key
-export const GAODE_MAP_KEY: string = ''
-
-// 百度地图 key
-export const BAIDU_MAP_KEY: string = ''
+export const ROUTER_WHITE_LIST: string[] = ['/500', '/400', '/404']

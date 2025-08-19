@@ -2,14 +2,14 @@
   "data": [
     {
       "id": 1,
-      "path": "/overview",
+      "path": "/home",
       "name": "概览",
       "link": "",
       "icon": "icon-changyongshili",
       "children": [
         {
           "id": 101,
-          "path": "/overview/analytics",
+          "path": "/home/analytics",
           "name": "分析页",
           "link": "",
           "icon": "icon-changyongshili",
@@ -17,7 +17,7 @@
         },
         {
           "id": 102,
-          "path": "/overview/workspace",
+          "path": "/home/workspace",
           "name": "工作台",
           "link": "",
           "icon": "icon-changyongshili",
@@ -31,7 +31,58 @@
       "name": "示例",
       "link": "",
       "icon": "icon-line-080",
-      "children": []
+      "children": [
+        {
+          "id": 201,
+          "path": "/demos/test1",
+          "name": "哈哈哈哈啊啊啊啊啊啊啊啊啊",
+          "link": "",
+          "icon": "icon-changyongshili",
+          "children": [
+            {
+              "id": 202,
+              "path": "/demos/test1/test11",
+              "name": "哈哈哈哈啊啊啊啊啊啊啊啊啊",
+              "link": "",
+              "icon": "icon-changyongshili",
+              "children": []
+            },
+            {
+              "id": 203,
+              "path": "/demos/test1/test12",
+              "name": "test12",
+              "link": "",
+              "icon": "icon-changyongshili",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 201,
+          "path": "/demos/test2",
+          "name": "test2",
+          "link": "",
+          "icon": "icon-changyongshili",
+          "children": [
+            {
+              "id": 202,
+              "path": "/demos/test2/test21",
+              "name": "test21",
+              "link": "",
+              "icon": "icon-changyongshili",
+              "children": []
+            },
+            {
+              "id": 203,
+              "path": "/demos/test2/test22",
+              "name": "test22",
+              "link": "",
+              "icon": "icon-changyongshili",
+              "children": []
+            }
+          ]
+        }
+      ]
     },
     {
       "id": 3,

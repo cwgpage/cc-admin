@@ -23,6 +23,15 @@ const router = createRouter({
             title: '工作台',
           },
         },
+
+        /* ************* 示例 ************* */
+        {
+          path: '/home/analytics',
+          component: () => import('@/views/home/analytics/index.vue'),
+          meta: {
+            title: '分析页',
+          },
+        },
       ],
     },
   ],

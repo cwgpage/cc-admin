@@ -1,7 +1,10 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
+import { useRoute } from 'vue-router'
 import menu from '@/json/menu.json'
 import SubMenu from '../components/SubMenu/index.vue'
+
+const route = useRoute()
 
 // 菜单列表
 const menuList: IMenu[] = menu.data
@@ -10,7 +13,7 @@ const subMenuList = ref<IMenu[]>([])
 subMenuList.value = menuList[0].children
 
 /** 激活的一级菜单的path */
-const activeTopMenu = ref('/overview')
+const activeTopMenu = ref('/home')
 
 // 菜单点击事件
 function menuClick(item: IMenu) {
@@ -19,13 +22,19 @@ function menuClick(item: IMenu) {
 }
 
 // 选择的菜单列表
-const selectMenuList = ref([])
-// 打开菜单列表
-const openMenu = ref([])
-// 子菜单点击事件
-function subMenuClick(menu: any) {
-  console.log('⚽ => ', menu)
+const selectMenuList = ref<string[]>([])
+
+watchEffect(() => {
+  const pathList = route.path.split('/').filter(item => item)
+  activeTopMenu.value = `/${pathList[0]}`
+})
+
+/** 页面创建时调用 */
+function pageCreated() {
+  selectMenuList.value = [route.path]
 }
+
+pageCreated()
 </script>
 
 <template>
@@ -45,11 +54,8 @@ function subMenuClick(menu: any) {
     </div>
     <div class="right-menu-wrapper">
       <div class="right-title">CC Admin Antd</div>
-      <!--              :open-keys="openMenu"
-        :items="subMenuList"
-        @open-change="subMenuClick" -->
       <a-menu v-model:selected-keys="selectMenuList" class="right-menu" mode="inline">
-        <SubMenu v-for="menu in subMenuList" :key="menu.path" :menu="menu" />
+        <SubMenu v-for="menuItem in subMenuList" :key="menuItem.path" :menu="menuItem" />
       </a-menu>
     </div>
   </div>
@@ -101,10 +107,12 @@ function subMenuClick(menu: any) {
   .right-menu {
     @apply flex-1;
   }
-}
 
-// 隐藏滚动条
-.left-menu-list::-webkit-scrollbar {
-  @apply w-0;
+  :deep(.ant-menu-item) {
+    @apply important-pl-18px pr-10px;
+  }
+  :deep(.ant-menu-submenu-title) {
+    @apply important-pl-10px;
+  }
 }
 </style>
