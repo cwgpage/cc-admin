@@ -23,6 +23,14 @@ const router = createRouter({
             title: '工作台',
           },
         },
+        /* ************* 盲盒 ************* */
+        {
+          path: '/blindBox/qwcw/boxList',
+          component: () => import('@/views/blindBox/qwcw/boxList/index.vue'),
+          meta: {
+            title: '趣玩潮玩-盲盒列表',
+          },
+        },
 
         /* ************* 示例 ************* */
         {

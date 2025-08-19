@@ -22,7 +22,7 @@ function menuClick(menuItem: IMenu) {
   <a-sub-menu v-if="menu.children.length" :key="menu.path">
     <template #title>
       <div class="flex items-center gap-5px">
-        <i class="iconfont" :class="menu.icon" />
+        <i class="iconfont !text-18px" :class="menu.icon" />
         <span>{{ menu.name }}</span>
       </div>
     </template>
@@ -30,12 +30,10 @@ function menuClick(menuItem: IMenu) {
   </a-sub-menu>
   <a-menu-item v-else :key="menu.path" @click="menuClick(menu)">
     <div class="flex items-center gap-5px">
-      <i class="iconfont" :class="menu.icon" />
+      <i class="iconfont !text-18px" :class="menu.icon" />
       <span>{{ menu.name }}</span>
     </div>
   </a-menu-item>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

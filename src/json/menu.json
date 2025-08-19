@@ -26,6 +26,32 @@
       ]
     },
     {
+      "id": 4,
+      "path": "/blindBox",
+      "name": "盲盒",
+      "link": "",
+      "icon": "icon-shili",
+      "children": [
+        {
+          "id": 401,
+          "path": "/blindBox/qwcw",
+          "name": "趣玩潮玩",
+          "link": "",
+          "icon": "icon-shili",
+          "children": [
+            {
+              "id": 4011,
+              "path": "/blindBox/qwcw/boxList",
+              "name": "盒子列表",
+              "link": "",
+              "icon": "icon-boxtag",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
       "id": 2,
       "path": "/demos",
       "name": "示例",
