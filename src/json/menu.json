@@ -2,24 +2,24 @@
   "data": [
     {
       "id": 1,
-      "path": "",
+      "path": "/overview",
       "name": "概览",
-      "link": "/",
+      "link": "",
       "icon": "icon-changyongshili",
       "children": [
         {
           "id": 101,
-          "path": "",
+          "path": "/overview/analytics",
           "name": "分析页",
-          "link": "/",
+          "link": "",
           "icon": "icon-changyongshili",
           "children": []
         },
         {
           "id": 102,
-          "path": "",
+          "path": "/overview/workspace",
           "name": "工作台",
-          "link": "/",
+          "link": "",
           "icon": "icon-changyongshili",
           "children": []
         }
@@ -27,25 +27,17 @@
     },
     {
       "id": 2,
-      "path": "",
-      "name": "演示",
-      "link": "/about",
+      "path": "/demos",
+      "name": "示例",
+      "link": "",
       "icon": "icon-line-080",
       "children": []
     },
     {
       "id": 3,
-      "path": "",
-      "name": "示例",
-      "link": "/contact",
-      "icon": "icon-shili",
-      "children": []
-    },
-    {
-      "id": 4,
-      "path": "",
+      "path": "/about",
       "name": "关于",
-      "link": "/login",
+      "link": "",
       "icon": "icon-guanyu1",
       "children": []
     }

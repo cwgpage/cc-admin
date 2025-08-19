@@ -5,14 +5,23 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      // name: 'Layout',
-      redirect: '/home',
+      redirect: '/home/analytics',
       component: () => import('@/layouts/default/index.vue'),
       children: [
+        /* ************* 概览 ************* */
         {
-          path: '/home',
-          name: 'Layout',
-          component: () => import('@/views/home/index.vue'),
+          path: '/home/analytics',
+          component: () => import('@/views/home/analytics/index.vue'),
+          meta: {
+            title: '分析页',
+          },
+        },
+        {
+          path: '/home/workspace',
+          component: () => import('@/views/home/analytics/index.vue'),
+          meta: {
+            title: '工作台',
+          },
         },
       ],
     },
