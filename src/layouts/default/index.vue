@@ -8,7 +8,7 @@ import Header from '../components/Header/index.vue'
     <LeftMenu />
     <div class="layout-right-content">
       <Header />
-      <div>
+      <div class="flex-1">
         <RouterView />
       </div>
     </div>
@@ -19,7 +19,8 @@ import Header from '../components/Header/index.vue'
 .default-layout {
   @apply flex h-screen;
 }
+
 .layout-right-content {
-  @apply flex-1;
+  @apply flex-1 flex flex-col;
 }
 </style>

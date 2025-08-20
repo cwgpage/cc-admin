@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { IMenu } from '@/types/index'
 import { ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import menu from '@/json/menu.json'
@@ -27,14 +28,14 @@ const selectMenuList = ref<string[]>([])
 watchEffect(() => {
   const pathList = route.path.split('/').filter(Boolean)
   activeTopMenu.value = `/${pathList[0]}`
-  /** 获取二级菜单列表 */
-  subMenuList.value = menuList.find(item => item.path === activeTopMenu.value)?.children || []
 })
 
 /** 页面创建时调用 */
 function pageCreated() {
   /** 获取默认选中的菜单 */
   selectMenuList.value = [route.path]
+  /** 获取二级菜单列表 */
+  subMenuList.value = menuList.find(item => item.path === activeTopMenu.value)?.children || []
 }
 
 pageCreated()
@@ -47,7 +48,8 @@ pageCreated()
         <img src="" class="h-30px w-30px" alt="">
       </div>
       <div class="left-menu-list">
-        <div v-for="item in menuList" :key="item.id" class="left-menu-item" :class="{ 'left-menu-item__active': activeTopMenu === item.path }" @click="menuClick(item)">
+        <div v-for="item in menuList" :key="item.id" class="left-menu-item"
+          :class="{ 'left-menu-item__active': activeTopMenu === item.path }" @click="menuClick(item)">
           <i class="iconfont" :class="item.icon" />
           <div class="leading-14px">
             {{ item.name }}
@@ -71,11 +73,14 @@ pageCreated()
 
 .left-menu-wrapper {
   @apply overflow-hidden border-r h-full;
+
   .left-logo {
     @apply h-49px center;
   }
+
   .left-menu-list {
     @apply w-70px overflow-y-scroll h-[calc(100%-45px)] pt-10px relative;
+
     &::-webkit-scrollbar {
       display: none;
     }
@@ -86,6 +91,7 @@ pageCreated()
       i {
         @apply text-22px leading-22px transition-all;
       }
+
       &:hover {
         @apply bg-#E3E6E7 rounded-4px text-(#2D69DE);
 
@@ -103,6 +109,7 @@ pageCreated()
 
 .right-menu-wrapper {
   @apply h-full w-160px flex flex-col;
+
   .right-title {
     @apply h-46px center text-(18px) border-r;
   }
@@ -114,6 +121,7 @@ pageCreated()
   :deep(.ant-menu-item) {
     @apply important-pl-18px pr-10px;
   }
+
   :deep(.ant-menu-submenu-title) {
     @apply important-pl-10px;
   }

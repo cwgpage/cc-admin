@@ -1,5 +1,5 @@
 // 菜单类型
-declare interface IMenu {
+export interface IMenu {
   id: number
   path: string
   name: string
