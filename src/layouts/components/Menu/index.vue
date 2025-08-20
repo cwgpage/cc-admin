@@ -2,7 +2,7 @@
 import { ref, watchEffect } from 'vue'
 import { useRoute } from 'vue-router'
 import menu from '@/json/menu.json'
-import SubMenu from '../components/SubMenu/index.vue'
+import SubMenu from '@/layouts/components/SubMenu/index.vue'
 
 const route = useRoute()
 
@@ -25,12 +25,15 @@ function menuClick(item: IMenu) {
 const selectMenuList = ref<string[]>([])
 
 watchEffect(() => {
-  const pathList = route.path.split('/').filter(item => item)
+  const pathList = route.path.split('/').filter(Boolean)
   activeTopMenu.value = `/${pathList[0]}`
+  /** 获取二级菜单列表 */
+  subMenuList.value = menuList.find(item => item.path === activeTopMenu.value)?.children || []
 })
 
 /** 页面创建时调用 */
 function pageCreated() {
+  /** 获取默认选中的菜单 */
   selectMenuList.value = [route.path]
 }
 

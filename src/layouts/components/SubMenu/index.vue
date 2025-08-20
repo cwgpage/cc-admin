@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
-import SubMenu from '@/layouts/components/components/SubMenu/index.vue'
+import SubMenu from '@/layouts/components/SubMenu/index.vue'
 
 const props = defineProps<{
   menu: IMenu
