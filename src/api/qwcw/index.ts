@@ -1,8 +1,8 @@
-import { useUserStore } from '@/stores/user'
+import { useQwcwStore } from '@/stores/box/qwcw'
 import f from '@/utils/fetchRequest'
 
 /** 接口地址 */
-const qwcwUrl = 'https://mart.hzhxyqchy.com'
+const qwcwUrl = '/qwcw'
 
 const defaultHeaders = {
   'Content-Type': 'application/x-www-form-urlencoded',
@@ -18,10 +18,11 @@ export interface IFindAppBoxSeries {
 
 /** 查找所有盒子列表 */
 export function findAppBoxSeries(params: IFindAppBoxSeries) {
-  const { userList } = useUserStore()
+  const { qwcwUserList } = useQwcwStore()
   const h = {
     ...defaultHeaders,
-    token: userList.value[0].token,
+    token: qwcwUserList.value[0].token,
+    random: 'rMJBcB',
   }
   return f.get(`${qwcwUrl}/mart/api/boxSeries/findAppBoxSeries`, params, { headers: h })
 }

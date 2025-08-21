@@ -8,7 +8,7 @@ import Header from '../components/Header/index.vue'
     <LeftMenu />
     <div class="layout-right-content">
       <Header />
-      <div class="flex-1">
+      <div class="content-wrap">
         <RouterView />
       </div>
     </div>
@@ -22,5 +22,9 @@ import Header from '../components/Header/index.vue'
 
 .layout-right-content {
   @apply flex-1 flex flex-col;
+}
+
+.content-wrap {
+  @apply flex-1 w-full box-border overflow-y-scroll;
 }
 </style>

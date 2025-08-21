@@ -24,4 +24,14 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  server: {
+    proxy: {
+      /** 趣丸潮玩 */
+      '/qwcw': {
+        target: 'https://mart.hzhxyqchy.com', // 你的后端服务地址
+        changeOrigin: true,
+        rewrite: path => path.replace(/^\/qwcw/, ''),
+      },
+    },
+  },
 })

@@ -17,7 +17,11 @@ export default {
       fetch(url, options)
         .then(response => response.json())
         .then((res) => {
-          resolve([null, res])
+          if (res.code === '1') {
+            resolve([null, res.data])
+          } else {
+            resolve([res, null])
+          }
         })
         .catch((err) => {
           resolve([err, null])
@@ -32,11 +36,18 @@ export default {
     }
     const allUrl = `${url}?${objToUrl(params)}`
     return new Promise((resolve) => {
-      fetch(allUrl, options).then((res) => {
-        resolve([null, res])
-      }).catch((err) => {
-        resolve([err, null])
-      })
+      fetch(allUrl, options)
+        .then(response => response.json())
+        .then((res) => {
+          if (res.code === '1') {
+            resolve([null, res.data])
+          } else {
+            resolve([res, null])
+          }
+        })
+        .catch((err) => {
+          resolve([err, null])
+        })
     })
   },
 }
