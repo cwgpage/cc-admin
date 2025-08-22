@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import LeftMenu from '@/layouts/components/Menu/index.vue'
 import Header from '../components/Header/index.vue'
+
+function onBack() {}
+
+function onForward() {}
 </script>
 
 <template>
@@ -9,7 +13,11 @@ import Header from '../components/Header/index.vue'
     <div class="layout-right-content">
       <Header />
       <div class="content-wrap">
-        <RouterView />
+        <router-view v-slot="{ Component }">
+          <vue-page-stack @back="onBack" @forward="onForward">
+            <component :is="Component" :key="$route.fullPath" />
+          </vue-page-stack>
+        </router-view>
       </div>
     </div>
   </div>
@@ -26,5 +34,12 @@ import Header from '../components/Header/index.vue'
 
 .content-wrap {
   @apply flex-1 w-full box-border overflow-y-scroll;
+}
+</style>
+
+<style lang="scss">
+.default-layout {
+  /** navBar高度 */
+  --default-header-height: 46px;
 }
 </style>

@@ -6,7 +6,7 @@ const router = createRouter({
     {
       path: '/',
       redirect: '/home/analytics',
-      component: () => import('@/layouts/default/index.vue'),
+      // component: () => import('@/layouts/default/index.vue'),
       children: [
         /* ************* 概览 ************* */
         {
@@ -29,6 +29,13 @@ const router = createRouter({
           component: () => import('@/views/blindBox/qwcw/boxList/index.vue'),
           meta: {
             title: '趣玩潮玩-盲盒列表',
+          },
+        },
+        {
+          path: '/blindBox/qwcw/boxDetail',
+          component: () => import('@/views/blindBox/qwcw/boxDetail/index.vue'),
+          meta: {
+            title: '趣玩潮玩-盲盒详情',
           },
         },
 

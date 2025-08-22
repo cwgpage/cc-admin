@@ -1,5 +1,13 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { useThemeStore } from '@/stores/theme.ts'
 
+const { themeConfig } = useThemeStore()
+
+/** 样式 */
+const styleConfig = ref({
+  height: themeConfig.value.navbarHeight,
+})
 </script>
 
 <template>
@@ -15,6 +23,6 @@
 
 <style lang="scss" scoped>
 .header-wrap {
-  @apply h-49px flex items-center justify-between px-8px border-b box-border;
+  @apply flex h-[var(--default-header-height)] items-center justify-between px-8px border-b box-border;
 }
 </style>

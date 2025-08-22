@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { IMenu } from '@/types/global.ts'
 import { useRouter } from 'vue-router'
 import SubMenu from '@/layouts/components/SubMenu/index.vue'
 
