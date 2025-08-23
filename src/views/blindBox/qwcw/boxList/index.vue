@@ -2,7 +2,7 @@
 import { useIntervalFn } from '@vueuse/core'
 import { ref } from 'vue'
 
-import { findAppBoxSeries, type IFindAppBoxSeries } from '@/api/qwcw'
+import { findAppBoxSeries, type IFindAppBoxSeries } from '@/server/api/qwcw'
 import qwcwJson from '@/json/box/qwcw.json'
 import { useQwcwStore } from '@/stores/box/qwcw'
 import { handleJsonFile } from '@/utils/setFile'
