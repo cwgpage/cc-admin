@@ -24,6 +24,7 @@ const router = createRouter({
           },
         },
         /* ************* 盲盒 ************* */
+        /* **** 趣玩潮玩 start **** */
         {
           path: '/blindBox/qwcw/boxList',
           component: () => import('@/views/blindBox/qwcw/boxList/index.vue'),
@@ -38,6 +39,14 @@ const router = createRouter({
             title: '趣玩潮玩-盲盒详情',
           },
         },
+        { 
+          path: '/blindBox/qwcw/drawBox',
+          component: () => import('@/views/blindBox/qwcw/drawBox/index.vue'),
+          meta: {
+            title: '趣玩潮玩-抽盒列表',
+          },
+        },
+        /* **** 趣玩潮玩 end **** */
 
         /* ************* 示例 ************* */
         {

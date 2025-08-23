@@ -46,6 +46,14 @@
               "link": "",
               "icon": "icon-boxtag",
               "children": []
+            },
+            {
+              "id": 4012,
+              "path": "/blindBox/qwcw/drawBox",
+              "name": "抽盒列表",
+              "link": "",
+              "icon": "icon-boxtag",
+              "children": []
             }
           ]
         }

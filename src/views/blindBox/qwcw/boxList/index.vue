@@ -1,7 +1,8 @@
 <script lang="ts" setup>
+import { useIntervalFn } from '@vueuse/core'
 import { ref } from 'vue'
-import { findAppBoxSeries, type IFindAppBoxSeries } from '@/api/qwcw'
 
+import { findAppBoxSeries, type IFindAppBoxSeries } from '@/api/qwcw'
 import qwcwJson from '@/json/box/qwcw.json'
 import { useQwcwStore } from '@/stores/box/qwcw'
 import { handleJsonFile } from '@/utils/setFile'
@@ -36,13 +37,19 @@ async function getBoxList() {
   const [err, res] = await findAppBoxSeries(form.value)
   if (err) return
 
-  boxList.value = res.list
+  boxList.value = [...boxList.value, ...res.list]
   total.value = res.total
 }
 
 function setFileClick() {
   handleJsonFile(qwcwJson)
 }
+
+const { pause } = useIntervalFn(() => {
+  if (boxList.value.length === total.value) pause()
+  form.value.currentPage++
+  getBoxList()
+}, 1000)
 
 async function pageCreated() {
   qwcwFileInfo.value = qwcwJson
@@ -67,8 +74,8 @@ pageCreated()
         <a-card-meta :title="item.seriesName">
           <template #description>
             <div class="flex justify-between text-(16px) font-bold">
+              <span>ID：{{ item.id }}</span>
               <span class="text-red">￥{{ item.price }}</span>
-              <span>{{ item.id }}</span>
             </div>
           </template>
         </a-card-meta>
@@ -79,7 +86,7 @@ pageCreated()
 
 <style lang="scss" scoped>
 .box-list-wrap {
-  @apply w-full h-full p-20px;
+  @apply w-full h-full overflow-y-scroll p-20px box-border pb-30px;
 
   :deep(.ant-card-body) {
     @apply px-10px py-15px;
