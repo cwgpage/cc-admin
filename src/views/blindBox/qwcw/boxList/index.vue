@@ -7,7 +7,7 @@ import qwcwJson from '@/json/box/qwcw.json'
 import { useQwcwStore } from '@/stores/box/qwcw'
 import { handleJsonFile } from '@/utils/setFile'
 
-const { qwcwUserList, qwcwFileInfo } = useQwcwStore()
+const { qwcwUserList, qwcwBoxOption } = useQwcwStore()
 
 const form = ref<IFindAppBoxSeries>({
   currentPage: 1,
@@ -52,7 +52,7 @@ const { pause } = useIntervalFn(() => {
 }, 1000)
 
 async function pageCreated() {
-  qwcwFileInfo.value = qwcwJson
+  qwcwBoxOption.value = qwcwJson
   getBoxList()
 }
 

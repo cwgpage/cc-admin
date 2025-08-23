@@ -8,21 +8,31 @@ export const useQwcwStore = createGlobalState(() => {
     { userId: 19456, token: 'bc83caa07e9a9bb8edff501e55dfcf9a' },
   ])
 
-  /** 检测盒子信息 */
-  const qwcwFileInfo = useLocalStorage('QWCW', {
-    /** 有隐藏的盒子列表，包含已经买走的 */
-    hideBoxList: [],
-    /** 检测过的盒子ID */
-    checkedListIds: [],
-    /** 盒子商品列表 */
-    boxGoodsList: [],
-  })
+  interface IQwcwBoxOption {
+    /** 检测的盒子 */
+    checkBoxIds: string[]
+    261: {
+      /** 隐藏的盒子列表 */
+      hideBoxList: any[]
+      /** 检测过的盒子ID */
+      checkedListIds: string[]
+      /** 盒子商品列表 */
+      // boxGoodsList: any[]
+    }
+  }
 
-  /** 检测的盒子id */
-  const checkBoxIds = useLocalStorage('QWCW_CHECK_BOX_IDS', ['261'])
+  /** 检测盒子信息 */
+  const qwcwBoxOption = useLocalStorage<any>('QWCW_BOX_OPTION', {
+    // checkBoxIds: ['268'],
+    hideBoxList: [],
+    checkedListIds: [],
+    // boxGoodsList: [],
+  })
+  const checkBoxIds = ref(['261'])
+
 
   return {
-    qwcwFileInfo,
+    qwcwBoxOption,
     qwcwUserList,
     checkBoxIds,
   }
